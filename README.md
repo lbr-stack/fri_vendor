@@ -1,6 +1,13 @@
 # fri_vendor
 ![GitHub](https://img.shields.io/github/license/KCL-BMEIS/fri)
 
+| Distribution | Build Status |
+| ---------------- | ------------ |
+| `humble`         | [![Build](https://github.com/KCL-BMEIS/fri_vendor/actions/workflows/build_humble.yaml/badge.svg)](https://github.com/KCL-BMEIS/fri_vendor/actions/workflows/build_humble.yaml) |
+| `rolling`        | [![Build](https://github.com/KCL-BMEIS/fri_vendor/actions/workflows/build_rolling.yaml/badge.svg)](https://github.com/KCL-BMEIS/fri_vendor/actions/workflows/build_rolling.yaml) |
+| `galactic`       | [![Build](https://github.com/KCL-BMEIS/fri_vendor/actions/workflows/build_galactic.yaml/badge.svg)](https://github.com/KCL-BMEIS/fri_vendor/actions/workflows/build_galactic.yaml) |
+| `foxy`           | [![Build](https://github.com/KCL-BMEIS/fri_vendor/actions/workflows/build_foxy.yaml/badge.svg)](https://github.com/KCL-BMEIS/fri_vendor/actions/workflows/build_foxy.yaml) |
+
 This repository simply integrates KUKA's `FRI` into the ROS 2 `ament_cmake` build ecosystem.
 
 ## Acknowledgements
