@@ -8,13 +8,21 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        build_pair: [
+          {os: ubuntu-latest, ros_distro: humble},
+          {os: ubuntu-latest, ros_distro: rolling},
+          {os: ubuntu-20.04, ros_distro: galactic},
+          {os: ubuntu-20.04, ros_distro: foxy},
+        ]
+    runs-on: ${{ matrix.build_pair.os }}
     steps:
       - uses: actions/checkout@v3
       - uses: ros-tooling/setup-ros@v0.6
         with:
-          required-ros-distributions: humble
+          required-ros-distributions: ${{ matrix.build_pair.ros_distro }}
       - uses: ros-tooling/action-ros-ci@v0.3
         with:
           package-name: fri_vendor
-          target-ros2-distro: humble
+          target-ros2-distro: ${{ matrix.build_pair.ros_distro }}
