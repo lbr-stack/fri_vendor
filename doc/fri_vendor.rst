@@ -32,6 +32,12 @@ If you intend to use the FRI in your own ROS 2 project, you can do so through th
 
 And replace ``<your target>`` with the name of your target.
 
+- In the build step, specify the desired FRI version
+
+.. code-block:: bash
+
+    colcon build --cmake-args -DFRI_CLIENT_VERSION=fri-1.15
+
 API
 ---
 For the ``Doxygen`` generated API, checkout `fri <../../docs/doxygen/fri/html/hierarchy.html>`_.
