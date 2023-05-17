@@ -28,7 +28,11 @@ If you intend to use the FRI in your own ROS 2 project, you can do so through th
     find_package(fri_vendor REQUIRED)
     find_package(FRIClient REQUIRED) # provided by fri_vendor
 
+    # link to target
     target_link_libraries(<your target> FRIClient::FRIClient)
+
+    # for down-stream packages
+    ament_export_dependencies(fri_vendor FRIClient)
 
 And replace ``<your target>`` with the name of your target.
 
