@@ -1,0 +1,56 @@
+name: Build fri_vendor
+
+on:
+  workflow_dispatch:
+  push:
+  schedule:
+    - cron: "0 0 1 * *" # monthly
+
+jobs:
+  build_humble:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ros-tooling/setup-ros@v0.6
+        with:
+          required-ros-distributions: humble
+      - uses: ros-tooling/action-ros-ci@v0.3
+        with:
+          package-name: fri_vendor
+          target-ros2-distro: humble
+
+  build_rolling:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ros-tooling/setup-ros@v0.6
+        with:
+          required-ros-distributions: rolling
+      - uses: ros-tooling/action-ros-ci@v0.3
+        with:
+          package-name: fri_vendor
+          target-ros2-distro: rolling
+
+  build_galactic:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ros-tooling/setup-ros@v0.6
+        with:
+          required-ros-distributions: galactic
+      - uses: ros-tooling/action-ros-ci@v0.3
+        with:
+          package-name: fri_vendor
+          target-ros2-distro: galactic
+
+  build_foxy:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ros-tooling/setup-ros@v0.6
+        with:
+          required-ros-distributions: foxy
+      - uses: ros-tooling/action-ros-ci@v0.3
+        with:
+          package-name: fri_vendor
+          target-ros2-distro: foxy
