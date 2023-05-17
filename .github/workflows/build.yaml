@@ -4,18 +4,19 @@ on:
   workflow_dispatch:
   push:
   schedule:
-    - cron: '0 0 1 * *' # monthly
+    - cron: "0 0 1 * *" # monthly
 
 jobs:
   build:
     strategy:
       matrix:
-        build_pair: [
-          {os: ubuntu-latest, ros_distro: humble},
-          {os: ubuntu-latest, ros_distro: rolling},
-          {os: ubuntu-20.04, ros_distro: galactic},
-          {os: ubuntu-20.04, ros_distro: foxy},
-        ]
+        build_pair:
+          [
+            { os: ubuntu-latest, ros_distro: humble },
+            { os: ubuntu-latest, ros_distro: rolling },
+            { os: ubuntu-20.04, ros_distro: galactic },
+            { os: ubuntu-20.04, ros_distro: foxy },
+          ]
     runs-on: ${{ matrix.build_pair.os }}
     steps:
       - uses: actions/checkout@v3
