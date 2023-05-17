@@ -40,7 +40,7 @@ And replace ``<your target>`` with the name of your target.
 
 .. code-block:: bash
 
-    colcon build --cmake-args -DFRI_CLIENT_VERSION=fri-1.15
+    colcon build --cmake-args -DFRI_CLIENT_VERSION=1.15
 
 API
 ---
