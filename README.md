@@ -1,5 +1,5 @@
 # fri_vendor
-![GitHub](https://img.shields.io/github/license/KCL-BMEIS/fri)
+![GitHub](https://img.shields.io/github/license/lbr-stack/fri_vendor)
 
 | Distribution | Build Status |
 | ---------------- | ------------ |
